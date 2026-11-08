@@ -1,0 +1,131 @@
+import type { ScenarioInfo, ConsumerRight } from '../types';
+
+export const scenarios: ScenarioInfo[] = [
+  {
+    type: 'cancellation',
+    name: 'Service Cancellation',
+    nameHe: 'ביטול שירות',
+    description: 'Request to cancel a service subscription or contract',
+    descriptionHe: 'בקשה לביטול מנוי או חוזה שירות',
+    keywords: ['cancel', 'terminate', 'end', 'stop', 'quit', 'unsubscribe'],
+    keywordsHe: ['לבטל', 'ביטול', 'להפסיק', 'לסיים', 'לעזוב', 'להתנתק', 'מבטל', 'רוצה לעזוב'],
+    defaultSlaResponseDays: 3,
+    defaultSlaResolutionDays: 14,
+  },
+  {
+    type: 'wrong_charge',
+    name: 'Incorrect Charge',
+    nameHe: 'חיוב שגוי',
+    description: 'Dispute over incorrect, duplicate, or unauthorized charges',
+    descriptionHe: 'מחלוקת על חיוב שגוי, כפול או לא מורשה',
+    keywords: ['charge', 'bill', 'overcharge', 'duplicate', 'refund', 'credit', 'wrong amount'],
+    keywordsHe: ['חיוב', 'חשבון', 'חייבו', 'פעמיים', 'כפול', 'החזר', 'זיכוי', 'סכום שגוי', 'גביתם', 'גבו'],
+    defaultSlaResponseDays: 5,
+    defaultSlaResolutionDays: 30,
+  },
+  {
+    type: 'unresolved_fault',
+    name: 'Unresolved Technical Fault',
+    nameHe: 'תקלה שלא טופלה',
+    description: 'Technical issue that has not been resolved despite previous attempts',
+    descriptionHe: 'תקלה טכנית שלא נפתרה למרות ניסיונות קודמים',
+    keywords: ['fault', 'broken', 'not working', 'outage', 'problem', 'issue', 'fix'],
+    keywordsHe: ['תקלה', 'לא עובד', 'שבור', 'בעיה', 'נפילה', 'לתקן', 'טכנאי', 'שירות לא זמין'],
+    defaultSlaResponseDays: 2,
+    defaultSlaResolutionDays: 7,
+  },
+  {
+    type: 'other',
+    name: 'Other Request',
+    nameHe: 'בקשה אחרת',
+    description: 'General customer service request',
+    descriptionHe: 'בקשת שירות לקוחות כללית',
+    keywords: ['help', 'request', 'question', 'information'],
+    keywordsHe: ['עזרה', 'בקשה', 'שאלה', 'מידע'],
+    defaultSlaResponseDays: 5,
+    defaultSlaResolutionDays: 14,
+  },
+];
+
+export const consumerRights: ConsumerRight[] = [
+  {
+    id: 'cancellation_14_days',
+    name: 'Right to Cancel Within 14 Days',
+    nameHe: 'זכות לביטול תוך 14 יום',
+    description: 'Consumers have the right to cancel a distance transaction (phone, internet) within 14 days of signing, with a maximum cancellation fee of 5% or 100 NIS.',
+    descriptionHe: 'לצרכן זכות לבטל עסקה מרחוק (טלפון, אינטרנט) תוך 14 יום מחתימת החוזה, עם דמי ביטול מקסימליים של 5% או 100 ש"ח.',
+    lawReference: 'Consumer Protection Law, Section 14ג',
+    lawReferenceHe: 'חוק הגנת הצרכן, סעיף 14ג',
+    sourceUrl: 'https://www.kolzchut.org.il/he/%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94',
+    verified: true,
+    applicableScenarios: ['cancellation'],
+  },
+  {
+    id: 'cancellation_by_fax',
+    name: 'Right to Cancel by Fax',
+    nameHe: 'זכות לבטל בפקס',
+    description: 'Service providers must accept cancellation requests via fax.',
+    descriptionHe: 'נותני שירות חייבים לקבל בקשות ביטול בפקס.',
+    lawReference: 'Consumer Protection Law, Section 13ד',
+    lawReferenceHe: 'חוק הגנת הצרכן, סעיף 13ד',
+    sourceUrl: 'https://www.kolzchut.org.il/he/%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94',
+    verified: true,
+    applicableScenarios: ['cancellation'],
+  },
+  {
+    id: 'immediate_cancellation',
+    name: 'Right to Immediate Cancellation',
+    nameHe: 'זכות לביטול מיידי',
+    description: 'A provider must process a cancellation request within 3 business days (or 6 for complex services).',
+    descriptionHe: 'ספק חייב לבצע בקשת ביטול תוך 3 ימי עסקים (או 6 לשירותים מורכבים).',
+    lawReference: 'Consumer Protection Law, Section 13א',
+    lawReferenceHe: 'חוק הגנת הצרכן, סעיף 13א',
+    sourceUrl: 'https://www.kolzchut.org.il/he/%D7%91%D7%99%D7%98%D7%95%D7%9C_%D7%A2%D7%A1%D7%A7%D7%94',
+    verified: true,
+    applicableScenarios: ['cancellation'],
+  },
+  {
+    id: 'refund_overcharge',
+    name: 'Right to Refund for Overcharges',
+    nameHe: 'זכות להחזר עבור חיוב יתר',
+    description: 'Consumers are entitled to a refund for any amount charged in error, plus linkage and interest.',
+    descriptionHe: 'לצרכן זכות להחזר כל סכום שנגבה בטעות, בתוספת הצמדה וריבית.',
+    lawReference: 'Consumer Protection Law, Section 18',
+    lawReferenceHe: 'חוק הגנת הצרכן, סעיף 18',
+    sourceUrl: 'https://www.kolzchut.org.il/he/%D7%94%D7%97%D7%96%D7%A8_%D7%9B%D7%A1%D7%A4%D7%99_%D7%9E%D7%A2%D7%95%D7%A1%D7%A7',
+    verified: true,
+    applicableScenarios: ['wrong_charge'],
+  },
+  {
+    id: 'service_level_telecom',
+    name: 'Right to Adequate Service Level',
+    nameHe: 'זכות לרמת שירות נאותה',
+    description: 'Telecom providers must provide service within defined quality standards per their license.',
+    descriptionHe: 'ספקי תקשורת חייבים לספק שירות בתוך תקני איכות מוגדרים לפי רישיונם.',
+    lawReference: 'Communications (Telecommunications and Broadcasting) Law',
+    lawReferenceHe: 'חוק התקשורת (בזק ושידורים)',
+    sourceUrl: 'https://www.gov.il/he/departments/ministry_of_communication',
+    verified: true,
+    applicableScenarios: ['unresolved_fault'],
+  },
+  {
+    id: 'complaint_to_regulator',
+    name: 'Right to Complain to Regulator',
+    nameHe: 'זכות להתלונן לרגולטור',
+    description: 'After exhausting options with the provider, consumers can escalate to the relevant regulator.',
+    descriptionHe: 'לאחר מיצוי האפשרויות מול הספק, צרכנים יכולים לפנות לרגולטור הרלוונטי.',
+    lawReference: 'Various Regulatory Laws',
+    lawReferenceHe: 'חוקים רגולטוריים שונים',
+    sourceUrl: 'https://www.kolzchut.org.il/he/%D7%94%D7%92%D7%A9%D7%AA_%D7%AA%D7%9C%D7%95%D7%A0%D7%94',
+    verified: true,
+    applicableScenarios: ['cancellation', 'wrong_charge', 'unresolved_fault', 'other'],
+  },
+];
+
+export function getScenarioByType(type: string): ScenarioInfo | undefined {
+  return scenarios.find(s => s.type === type);
+}
+
+export function getRightsForScenario(scenarioType: string): ConsumerRight[] {
+  return consumerRights.filter(r => r.applicableScenarios.includes(scenarioType as any));
+}

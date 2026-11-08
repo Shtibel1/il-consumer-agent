@@ -1,0 +1,160 @@
+{
+  "id": "hapoalim",
+  "name": "Bank Hapoalim",
+  "nameHe": "בנק הפועלים",
+  "industry": "banking",
+  "website": "https://www.bankhapoalim.co.il",
+  "contactChannels": [
+    {
+      "type": "phone",
+      "value": "*2407",
+      "description": "Customer service",
+      "sourceUrl": "https://www.bankhapoalim.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "phone",
+      "value": "03-6532407",
+      "description": "Customer service from abroad",
+      "sourceUrl": "https://www.bankhapoalim.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "webform",
+      "value": "https://www.bankhapoalim.co.il/contact",
+      "description": "Online contact form",
+      "sourceUrl": "https://www.bankhapoalim.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "app",
+      "value": "Bit / Bank Hapoalim App",
+      "description": "Mobile banking app",
+      "sourceUrl": "https://www.bankhapoalim.co.il",
+      "verified": true
+    },
+    {
+      "type": "chat",
+      "value": "https://www.bankhapoalim.co.il",
+      "description": "Website chat",
+      "sourceUrl": "https://www.bankhapoalim.co.il",
+      "verified": true
+    }
+  ],
+  "escalationLadder": [
+    {
+      "level": 1,
+      "name": "Customer Service",
+      "nameHe": "שירות לקוחות",
+      "description": "Customer service center",
+      "descriptionHe": "מוקד שירות לקוחות",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*2407",
+          "sourceUrl": "https://www.bankhapoalim.co.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 1,
+      "sourceUrl": "https://www.bankhapoalim.co.il/contact",
+      "verified": true
+    },
+    {
+      "level": 2,
+      "name": "Branch Manager",
+      "nameHe": "מנהל סניף",
+      "description": "Your branch manager",
+      "descriptionHe": "מנהל הסניף שלך",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*2407",
+          "description": "Request branch manager contact",
+          "sourceUrl": "https://www.bankhapoalim.co.il",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 3,
+      "sourceUrl": "https://www.bankhapoalim.co.il",
+      "verified": true
+    },
+    {
+      "level": 3,
+      "name": "Bank Ombudsman",
+      "nameHe": "נציב פניות הציבור",
+      "description": "Bank's internal ombudsman",
+      "descriptionHe": "נציב פניות הציבור של הבנק",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.bankhapoalim.co.il/ombudsman",
+          "sourceUrl": "https://www.bankhapoalim.co.il",
+          "verified": false,
+          "notes": "To verify URL"
+        }
+      ],
+      "typicalResponseDays": 14,
+      "sourceUrl": "https://www.bankhapoalim.co.il",
+      "verified": false
+    },
+    {
+      "level": 4,
+      "name": "Bank of Israel - Banking Supervision",
+      "nameHe": "בנק ישראל - הפיקוח על הבנקים",
+      "description": "Banking regulator",
+      "descriptionHe": "הרגולטור הבנקאי",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.boi.org.il/he/BankingSupervision/ComplaintsOnBanks",
+          "sourceUrl": "https://www.boi.org.il",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 45,
+      "sourceUrl": "https://www.boi.org.il",
+      "verified": true
+    }
+  ],
+  "slaInfo": [
+    {
+      "scenario": "cancellation",
+      "maxResponseDays": 5,
+      "maxResolutionDays": 14,
+      "sourceUrl": "https://www.boi.org.il",
+      "verified": false
+    },
+    {
+      "scenario": "wrong_charge",
+      "maxResponseDays": 7,
+      "maxResolutionDays": 45,
+      "sourceUrl": "https://www.boi.org.il",
+      "verified": false
+    },
+    {
+      "scenario": "unresolved_fault",
+      "maxResponseDays": 3,
+      "maxResolutionDays": 14,
+      "sourceUrl": "https://www.boi.org.il",
+      "verified": false
+    }
+  ],
+  "consumerRights": [],
+  "regulator": {
+    "name": "Bank of Israel - Banking Supervision",
+    "nameHe": "בנק ישראל - הפיקוח על הבנקים",
+    "website": "https://www.boi.org.il",
+    "complaintUrl": "https://www.boi.org.il/he/BankingSupervision/ComplaintsOnBanks"
+  },
+  "keywords": ["hapoalim", "bank", "banking", "bit"],
+  "keywordsHe": ["הפועלים", "בנק", "ביט", "פועלים"],
+  "stats": {
+    "totalRequests": 0,
+    "avgResponseDays": 0,
+    "successRate": 0,
+    "escalationRate": 0,
+    "byScenario": {}
+  },
+  "lastUpdated": "2024-01-15"
+}

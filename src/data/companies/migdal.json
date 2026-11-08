@@ -1,0 +1,160 @@
+{
+  "id": "migdal",
+  "name": "Migdal Insurance",
+  "nameHe": "מגדל ביטוח",
+  "industry": "insurance",
+  "website": "https://www.migdal.co.il",
+  "contactChannels": [
+    {
+      "type": "phone",
+      "value": "*2424",
+      "description": "Customer service",
+      "sourceUrl": "https://www.migdal.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "phone",
+      "value": "03-9201111",
+      "description": "General customer service",
+      "sourceUrl": "https://www.migdal.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "webform",
+      "value": "https://www.migdal.co.il/contact",
+      "description": "Online contact form",
+      "sourceUrl": "https://www.migdal.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "app",
+      "value": "Migdal App",
+      "description": "Mobile app",
+      "sourceUrl": "https://www.migdal.co.il",
+      "verified": true
+    },
+    {
+      "type": "chat",
+      "value": "https://www.migdal.co.il",
+      "description": "Website chat",
+      "sourceUrl": "https://www.migdal.co.il",
+      "verified": true
+    }
+  ],
+  "escalationLadder": [
+    {
+      "level": 1,
+      "name": "Customer Service",
+      "nameHe": "שירות לקוחות",
+      "description": "Customer service center",
+      "descriptionHe": "מוקד שירות לקוחות",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*2424",
+          "sourceUrl": "https://www.migdal.co.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 2,
+      "sourceUrl": "https://www.migdal.co.il/contact",
+      "verified": true
+    },
+    {
+      "level": 2,
+      "name": "Claims Department Manager",
+      "nameHe": "מנהל מחלקת תביעות",
+      "description": "Department manager",
+      "descriptionHe": "מנהל מחלקה",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*2424",
+          "description": "Request manager",
+          "sourceUrl": "https://www.migdal.co.il",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 5,
+      "sourceUrl": "https://www.migdal.co.il",
+      "verified": true
+    },
+    {
+      "level": 3,
+      "name": "Company Ombudsman",
+      "nameHe": "נציב פניות הציבור",
+      "description": "Insurance company ombudsman",
+      "descriptionHe": "נציב פניות הציבור של חברת הביטוח",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.migdal.co.il/ombudsman",
+          "sourceUrl": "https://www.migdal.co.il",
+          "verified": false,
+          "notes": "To verify URL"
+        }
+      ],
+      "typicalResponseDays": 21,
+      "sourceUrl": "https://www.migdal.co.il",
+      "verified": false
+    },
+    {
+      "level": 4,
+      "name": "Capital Market Authority",
+      "nameHe": "רשות שוק ההון",
+      "description": "Insurance regulator",
+      "descriptionHe": "הרגולטור לביטוח",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.gov.il/he/departments/capital_market_authority",
+          "sourceUrl": "https://www.gov.il/he/departments/capital_market_authority",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 45,
+      "sourceUrl": "https://www.gov.il/he/departments/capital_market_authority",
+      "verified": true
+    }
+  ],
+  "slaInfo": [
+    {
+      "scenario": "cancellation",
+      "maxResponseDays": 5,
+      "maxResolutionDays": 14,
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": true
+    },
+    {
+      "scenario": "wrong_charge",
+      "maxResponseDays": 7,
+      "maxResolutionDays": 45,
+      "sourceUrl": "https://www.gov.il/he/departments/capital_market_authority",
+      "verified": false
+    },
+    {
+      "scenario": "unresolved_fault",
+      "maxResponseDays": 5,
+      "maxResolutionDays": 30,
+      "sourceUrl": "https://www.gov.il/he/departments/capital_market_authority",
+      "verified": false
+    }
+  ],
+  "consumerRights": [],
+  "regulator": {
+    "name": "Capital Market Authority",
+    "nameHe": "רשות שוק ההון, ביטוח וחיסכון",
+    "website": "https://www.gov.il/he/departments/capital_market_authority",
+    "complaintUrl": "https://www.gov.il/he/departments/capital_market_authority"
+  },
+  "keywords": ["migdal", "insurance", "health", "car", "life", "pension"],
+  "keywordsHe": ["מגדל", "ביטוח", "בריאות", "רכב", "חיים", "פנסיה"],
+  "stats": {
+    "totalRequests": 0,
+    "avgResponseDays": 0,
+    "successRate": 0,
+    "escalationRate": 0,
+    "byScenario": {}
+  },
+  "lastUpdated": "2024-01-15"
+}

@@ -1,0 +1,185 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 16px;
+}
+
+.emptyIcon {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.empty h2 {
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+.empty p {
+  color: #64748b;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.date {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.statIcon {
+  font-size: 32px;
+}
+
+.statContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #334155;
+}
+
+.alertIcon {
+  color: #dc2626;
+}
+
+.requestList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.requestCard {
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-right: 3px solid #e2e8f0;
+}
+
+.requestCard.overdue {
+  background: #fef2f2;
+  border-right-color: #dc2626;
+}
+
+.requestCard.escalation {
+  background: #fff7ed;
+  border-right-color: #f59e0b;
+}
+
+.requestHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.companyName {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.requestDesc {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.requestMeta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.slaOverdue {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.escalationReason,
+.suggestedAction {
+  font-size: 13px;
+  margin-top: 8px;
+  color: #78350f;
+}
+
+.noData {
+  text-align: center;
+  color: #64748b;
+  padding: 20px;
+}
+
+@media (max-width: 640px) {
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .statCard {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "id": "partner",
+  "name": "Partner Communications",
+  "nameHe": "פרטנר",
+  "industry": "telecom",
+  "website": "https://www.partner.co.il",
+  "contactChannels": [
+    {
+      "type": "phone",
+      "value": "*054",
+      "description": "Customer service from Partner phone",
+      "sourceUrl": "https://www.partner.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "phone",
+      "value": "054-7814054",
+      "description": "Customer service from other phone",
+      "sourceUrl": "https://www.partner.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "chat",
+      "value": "https://www.partner.co.il",
+      "description": "Website chat",
+      "sourceUrl": "https://www.partner.co.il",
+      "verified": true
+    },
+    {
+      "type": "webform",
+      "value": "https://www.partner.co.il/contact",
+      "description": "Online contact form",
+      "sourceUrl": "https://www.partner.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "fax",
+      "value": "054-7814000",
+      "description": "Fax for cancellations",
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": false,
+      "notes": "To verify - exact fax number"
+    },
+    {
+      "type": "app",
+      "value": "Partner App",
+      "description": "Mobile app",
+      "sourceUrl": "https://www.partner.co.il/app",
+      "verified": true
+    }
+  ],
+  "escalationLadder": [
+    {
+      "level": 1,
+      "name": "Customer Service",
+      "nameHe": "שירות לקוחות",
+      "description": "First line customer service",
+      "descriptionHe": "קו ראשון של שירות לקוחות",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*054",
+          "sourceUrl": "https://www.partner.co.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 1,
+      "sourceUrl": "https://www.partner.co.il/contact",
+      "verified": true
+    },
+    {
+      "level": 2,
+      "name": "Customer Service Manager",
+      "nameHe": "מנהל שירות לקוחות",
+      "description": "Request to speak with a manager",
+      "descriptionHe": "בקשה לדבר עם מנהל",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*054",
+          "description": "Ask for manager",
+          "sourceUrl": "https://www.partner.co.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 3,
+      "sourceUrl": "https://www.partner.co.il/contact",
+      "verified": true
+    },
+    {
+      "level": 3,
+      "name": "Company Ombudsman",
+      "nameHe": "נציב פניות הציבור",
+      "description": "Internal ombudsman",
+      "descriptionHe": "נציב פניות הציבור",
+      "channels": [
+        {
+          "type": "email",
+          "value": "pniot@partner.co.il",
+          "sourceUrl": "https://www.partner.co.il",
+          "verified": false,
+          "notes": "To verify"
+        }
+      ],
+      "typicalResponseDays": 14,
+      "sourceUrl": "https://www.partner.co.il",
+      "verified": false
+    },
+    {
+      "level": 4,
+      "name": "Ministry of Communications",
+      "nameHe": "משרד התקשורת",
+      "description": "Regulator",
+      "descriptionHe": "הרגולטור",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.gov.il/he/service/communication-service-complaint",
+          "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 30,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": true
+    }
+  ],
+  "slaInfo": [
+    {
+      "scenario": "cancellation",
+      "maxResponseDays": 3,
+      "maxResolutionDays": 6,
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": true
+    },
+    {
+      "scenario": "wrong_charge",
+      "maxResponseDays": 5,
+      "maxResolutionDays": 30,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": false
+    },
+    {
+      "scenario": "unresolved_fault",
+      "maxResponseDays": 2,
+      "maxResolutionDays": 7,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": false
+    }
+  ],
+  "consumerRights": [],
+  "regulator": {
+    "name": "Ministry of Communications",
+    "nameHe": "משרד התקשורת",
+    "website": "https://www.gov.il/he/departments/ministry_of_communication",
+    "complaintUrl": "https://www.gov.il/he/service/communication-service-complaint"
+  },
+  "keywords": ["partner", "orange", "cellular", "mobile"],
+  "keywordsHe": ["פרטנר", "אורנג", "סלולרי", "נייד"],
+  "stats": {
+    "totalRequests": 0,
+    "avgResponseDays": 0,
+    "successRate": 0,
+    "escalationRate": 0,
+    "byScenario": {}
+  },
+  "lastUpdated": "2024-01-15"
+}

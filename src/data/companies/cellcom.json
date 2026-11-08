@@ -1,0 +1,169 @@
+{
+  "id": "cellcom",
+  "name": "Cellcom",
+  "nameHe": "סלקום",
+  "industry": "telecom",
+  "website": "https://www.cellcom.co.il",
+  "contactChannels": [
+    {
+      "type": "phone",
+      "value": "*123",
+      "description": "Customer service from Cellcom phone",
+      "sourceUrl": "https://www.cellcom.co.il/contact-us",
+      "verified": true
+    },
+    {
+      "type": "phone",
+      "value": "052-9990123",
+      "description": "Customer service from other phone",
+      "sourceUrl": "https://www.cellcom.co.il/contact-us",
+      "verified": true
+    },
+    {
+      "type": "whatsapp",
+      "value": "https://wa.me/972529990123",
+      "description": "WhatsApp customer service",
+      "sourceUrl": "https://www.cellcom.co.il/contact-us",
+      "verified": false,
+      "notes": "To verify - WhatsApp availability"
+    },
+    {
+      "type": "webform",
+      "value": "https://www.cellcom.co.il/contact-us",
+      "description": "Online contact form",
+      "sourceUrl": "https://www.cellcom.co.il/contact-us",
+      "verified": true
+    },
+    {
+      "type": "fax",
+      "value": "052-9990456",
+      "description": "Fax for cancellations (legally required)",
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": false,
+      "notes": "To verify - exact fax number for cancellations"
+    },
+    {
+      "type": "app",
+      "value": "Cellcom App",
+      "description": "Mobile app chat",
+      "sourceUrl": "https://www.cellcom.co.il/app",
+      "verified": true
+    }
+  ],
+  "escalationLadder": [
+    {
+      "level": 1,
+      "name": "Customer Service",
+      "nameHe": "שירות לקוחות",
+      "description": "First line customer service",
+      "descriptionHe": "קו ראשון של שירות לקוחות",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*123",
+          "sourceUrl": "https://www.cellcom.co.il/contact-us",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 1,
+      "sourceUrl": "https://www.cellcom.co.il/contact-us",
+      "verified": true
+    },
+    {
+      "level": 2,
+      "name": "Customer Service Manager",
+      "nameHe": "מנהל שירות לקוחות",
+      "description": "Request to speak with a manager",
+      "descriptionHe": "בקשה לדבר עם מנהל",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*123",
+          "description": "Ask for manager",
+          "sourceUrl": "https://www.cellcom.co.il/contact-us",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 3,
+      "sourceUrl": "https://www.cellcom.co.il/contact-us",
+      "verified": true
+    },
+    {
+      "level": 3,
+      "name": "Company Ombudsman",
+      "nameHe": "נציב פניות הציבור",
+      "description": "Internal ombudsman for unresolved complaints",
+      "descriptionHe": "נציב פניות הציבור לתלונות שלא נפתרו",
+      "channels": [
+        {
+          "type": "email",
+          "value": "ombudsman@cellcom.co.il",
+          "sourceUrl": "https://www.cellcom.co.il",
+          "verified": false,
+          "notes": "To verify - exact ombudsman email"
+        }
+      ],
+      "typicalResponseDays": 14,
+      "sourceUrl": "https://www.cellcom.co.il",
+      "verified": false
+    },
+    {
+      "level": 4,
+      "name": "Ministry of Communications",
+      "nameHe": "משרד התקשורת",
+      "description": "Regulator for telecommunications",
+      "descriptionHe": "הרגולטור לתקשורת",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.gov.il/he/service/communication-service-complaint",
+          "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 30,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": true
+    }
+  ],
+  "slaInfo": [
+    {
+      "scenario": "cancellation",
+      "maxResponseDays": 3,
+      "maxResolutionDays": 6,
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": true
+    },
+    {
+      "scenario": "wrong_charge",
+      "maxResponseDays": 5,
+      "maxResolutionDays": 30,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": false
+    },
+    {
+      "scenario": "unresolved_fault",
+      "maxResponseDays": 2,
+      "maxResolutionDays": 7,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": false
+    }
+  ],
+  "consumerRights": [],
+  "regulator": {
+    "name": "Ministry of Communications",
+    "nameHe": "משרד התקשורת",
+    "website": "https://www.gov.il/he/departments/ministry_of_communication",
+    "complaintUrl": "https://www.gov.il/he/service/communication-service-complaint"
+  },
+  "keywords": ["cellcom", "cellular", "mobile", "phone"],
+  "keywordsHe": ["סלקום", "סלולרי", "נייד", "טלפון"],
+  "stats": {
+    "totalRequests": 0,
+    "avgResponseDays": 0,
+    "successRate": 0,
+    "escalationRate": 0,
+    "byScenario": {}
+  },
+  "lastUpdated": "2024-01-15"
+}
