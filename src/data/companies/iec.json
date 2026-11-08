@@ -1,0 +1,161 @@
+{
+  "id": "iec",
+  "name": "Israel Electric Corporation",
+  "nameHe": "חברת החשמל",
+  "industry": "utilities",
+  "website": "https://www.iec.co.il",
+  "contactChannels": [
+    {
+      "type": "phone",
+      "value": "*103",
+      "description": "Customer service",
+      "sourceUrl": "https://www.iec.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "phone",
+      "value": "1-800-103-103",
+      "description": "Toll-free service",
+      "sourceUrl": "https://www.iec.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "webform",
+      "value": "https://www.iec.co.il/contact",
+      "description": "Online contact form",
+      "sourceUrl": "https://www.iec.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "app",
+      "value": "IEC App",
+      "description": "Mobile app",
+      "sourceUrl": "https://www.iec.co.il",
+      "verified": true
+    },
+    {
+      "type": "fax",
+      "value": "03-5024717",
+      "description": "Customer service fax",
+      "sourceUrl": "https://www.iec.co.il",
+      "verified": false,
+      "notes": "To verify fax number"
+    }
+  ],
+  "escalationLadder": [
+    {
+      "level": 1,
+      "name": "Customer Service",
+      "nameHe": "שירות לקוחות",
+      "description": "First line customer service",
+      "descriptionHe": "קו ראשון של שירות לקוחות",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*103",
+          "sourceUrl": "https://www.iec.co.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 1,
+      "sourceUrl": "https://www.iec.co.il/contact",
+      "verified": true
+    },
+    {
+      "level": 2,
+      "name": "Regional Service Center",
+      "nameHe": "מרכז שירות אזורי",
+      "description": "Regional service center",
+      "descriptionHe": "מרכז שירות אזורי",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*103",
+          "description": "Ask for regional center",
+          "sourceUrl": "https://www.iec.co.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 5,
+      "sourceUrl": "https://www.iec.co.il/contact",
+      "verified": true
+    },
+    {
+      "level": 3,
+      "name": "Company Ombudsman",
+      "nameHe": "נציב פניות הציבור",
+      "description": "Internal ombudsman",
+      "descriptionHe": "נציב פניות הציבור",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.iec.co.il/ombudsman",
+          "sourceUrl": "https://www.iec.co.il",
+          "verified": false,
+          "notes": "To verify URL"
+        }
+      ],
+      "typicalResponseDays": 21,
+      "sourceUrl": "https://www.iec.co.il",
+      "verified": false
+    },
+    {
+      "level": 4,
+      "name": "Public Utilities Authority - Electricity",
+      "nameHe": "רשות החשמל",
+      "description": "Electricity regulator",
+      "descriptionHe": "הרגולטור לחשמל",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.gov.il/he/departments/pua",
+          "sourceUrl": "https://www.gov.il/he/departments/pua",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 30,
+      "sourceUrl": "https://www.gov.il/he/departments/pua",
+      "verified": true
+    }
+  ],
+  "slaInfo": [
+    {
+      "scenario": "cancellation",
+      "maxResponseDays": 5,
+      "maxResolutionDays": 14,
+      "sourceUrl": "https://www.iec.co.il",
+      "verified": false
+    },
+    {
+      "scenario": "wrong_charge",
+      "maxResponseDays": 7,
+      "maxResolutionDays": 30,
+      "sourceUrl": "https://www.iec.co.il",
+      "verified": false
+    },
+    {
+      "scenario": "unresolved_fault",
+      "maxResponseDays": 1,
+      "maxResolutionDays": 3,
+      "sourceUrl": "https://www.iec.co.il",
+      "verified": false
+    }
+  ],
+  "consumerRights": [],
+  "regulator": {
+    "name": "Public Utilities Authority - Electricity",
+    "nameHe": "רשות החשמל",
+    "website": "https://www.gov.il/he/departments/pua",
+    "complaintUrl": "https://www.gov.il/he/departments/pua"
+  },
+  "keywords": ["electric", "electricity", "iec", "power", "outage"],
+  "keywordsHe": ["חשמל", "חברת החשמל", "הפסקת חשמל", "מונה"],
+  "stats": {
+    "totalRequests": 0,
+    "avgResponseDays": 0,
+    "successRate": 0,
+    "escalationRate": 0,
+    "byScenario": {}
+  },
+  "lastUpdated": "2024-01-15"
+}

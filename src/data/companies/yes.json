@@ -1,0 +1,161 @@
+{
+  "id": "yes",
+  "name": "yes",
+  "nameHe": "יס",
+  "industry": "tv",
+  "website": "https://www.yes.co.il",
+  "contactChannels": [
+    {
+      "type": "phone",
+      "value": "*2080",
+      "description": "Customer service",
+      "sourceUrl": "https://www.yes.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "phone",
+      "value": "03-7697697",
+      "description": "Customer service from landline",
+      "sourceUrl": "https://www.yes.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "chat",
+      "value": "https://www.yes.co.il",
+      "description": "Website chat",
+      "sourceUrl": "https://www.yes.co.il",
+      "verified": true
+    },
+    {
+      "type": "webform",
+      "value": "https://www.yes.co.il/contact",
+      "description": "Online contact form",
+      "sourceUrl": "https://www.yes.co.il/contact",
+      "verified": true
+    },
+    {
+      "type": "fax",
+      "value": "03-7697600",
+      "description": "Fax for cancellations",
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": false,
+      "notes": "To verify fax number"
+    }
+  ],
+  "escalationLadder": [
+    {
+      "level": 1,
+      "name": "Customer Service",
+      "nameHe": "שירות לקוחות",
+      "description": "First line customer service",
+      "descriptionHe": "קו ראשון של שירות לקוחות",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*2080",
+          "sourceUrl": "https://www.yes.co.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 1,
+      "sourceUrl": "https://www.yes.co.il/contact",
+      "verified": true
+    },
+    {
+      "level": 2,
+      "name": "Service Manager",
+      "nameHe": "מנהל שירות",
+      "description": "Request manager",
+      "descriptionHe": "בקשה לדבר עם מנהל",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*2080",
+          "description": "Ask for manager",
+          "sourceUrl": "https://www.yes.co.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 3,
+      "sourceUrl": "https://www.yes.co.il/contact",
+      "verified": true
+    },
+    {
+      "level": 3,
+      "name": "Company Ombudsman",
+      "nameHe": "נציב פניות הציבור",
+      "description": "Internal ombudsman",
+      "descriptionHe": "נציב פניות הציבור",
+      "channels": [
+        {
+          "type": "email",
+          "value": "pniot@yes.co.il",
+          "sourceUrl": "https://www.yes.co.il",
+          "verified": false,
+          "notes": "To verify"
+        }
+      ],
+      "typicalResponseDays": 14,
+      "sourceUrl": "https://www.yes.co.il",
+      "verified": false
+    },
+    {
+      "level": 4,
+      "name": "Second Authority for Television and Radio",
+      "nameHe": "הרשות השנייה לטלוויזיה ורדיו",
+      "description": "Regulator for satellite TV",
+      "descriptionHe": "הרגולטור לטלוויזיה בלוויין",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.rashut2.org.il/contact",
+          "sourceUrl": "https://www.rashut2.org.il",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 30,
+      "sourceUrl": "https://www.rashut2.org.il",
+      "verified": true
+    }
+  ],
+  "slaInfo": [
+    {
+      "scenario": "cancellation",
+      "maxResponseDays": 3,
+      "maxResolutionDays": 6,
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": true
+    },
+    {
+      "scenario": "wrong_charge",
+      "maxResponseDays": 5,
+      "maxResolutionDays": 30,
+      "sourceUrl": "https://www.rashut2.org.il",
+      "verified": false
+    },
+    {
+      "scenario": "unresolved_fault",
+      "maxResponseDays": 2,
+      "maxResolutionDays": 7,
+      "sourceUrl": "https://www.rashut2.org.il",
+      "verified": false
+    }
+  ],
+  "consumerRights": [],
+  "regulator": {
+    "name": "Second Authority for Television and Radio",
+    "nameHe": "הרשות השנייה לטלוויזיה ורדיו",
+    "website": "https://www.rashut2.org.il",
+    "complaintUrl": "https://www.rashut2.org.il/contact"
+  },
+  "keywords": ["yes", "satellite", "tv", "television"],
+  "keywordsHe": ["יס", "לוויין", "טלוויזיה"],
+  "stats": {
+    "totalRequests": 0,
+    "avgResponseDays": 0,
+    "successRate": 0,
+    "escalationRate": 0,
+    "byScenario": {}
+  },
+  "lastUpdated": "2024-01-15"
+}

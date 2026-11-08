@@ -1,0 +1,169 @@
+{
+  "id": "hot",
+  "name": "HOT Telecommunication Systems",
+  "nameHe": "הוט",
+  "industry": "telecom",
+  "website": "https://www.hot.net.il",
+  "contactChannels": [
+    {
+      "type": "phone",
+      "value": "*6900",
+      "description": "Customer service",
+      "sourceUrl": "https://www.hot.net.il/contact",
+      "verified": true
+    },
+    {
+      "type": "phone",
+      "value": "1-800-800-690",
+      "description": "Toll-free customer service",
+      "sourceUrl": "https://www.hot.net.il/contact",
+      "verified": true
+    },
+    {
+      "type": "chat",
+      "value": "https://www.hot.net.il",
+      "description": "Website chat",
+      "sourceUrl": "https://www.hot.net.il",
+      "verified": true
+    },
+    {
+      "type": "whatsapp",
+      "value": "https://wa.me/972546900690",
+      "description": "WhatsApp service",
+      "sourceUrl": "https://www.hot.net.il/contact",
+      "verified": false,
+      "notes": "To verify WhatsApp number"
+    },
+    {
+      "type": "webform",
+      "value": "https://www.hot.net.il/contact",
+      "description": "Online contact form",
+      "sourceUrl": "https://www.hot.net.il/contact",
+      "verified": true
+    },
+    {
+      "type": "fax",
+      "value": "09-8600601",
+      "description": "Fax for cancellations",
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": false,
+      "notes": "To verify fax number"
+    }
+  ],
+  "escalationLadder": [
+    {
+      "level": 1,
+      "name": "Customer Service",
+      "nameHe": "שירות לקוחות",
+      "description": "First line customer service",
+      "descriptionHe": "קו ראשון של שירות לקוחות",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*6900",
+          "sourceUrl": "https://www.hot.net.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 1,
+      "sourceUrl": "https://www.hot.net.il/contact",
+      "verified": true
+    },
+    {
+      "level": 2,
+      "name": "Service Manager",
+      "nameHe": "מנהל שירות",
+      "description": "Request to speak with a manager",
+      "descriptionHe": "בקשה לדבר עם מנהל",
+      "channels": [
+        {
+          "type": "phone",
+          "value": "*6900",
+          "description": "Ask for manager",
+          "sourceUrl": "https://www.hot.net.il/contact",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 3,
+      "sourceUrl": "https://www.hot.net.il/contact",
+      "verified": true
+    },
+    {
+      "level": 3,
+      "name": "Company Ombudsman",
+      "nameHe": "נציב פניות הציבור",
+      "description": "Internal ombudsman",
+      "descriptionHe": "נציב פניות הציבור",
+      "channels": [
+        {
+          "type": "email",
+          "value": "ombudsman@hot.net.il",
+          "sourceUrl": "https://www.hot.net.il",
+          "verified": false,
+          "notes": "To verify"
+        }
+      ],
+      "typicalResponseDays": 14,
+      "sourceUrl": "https://www.hot.net.il",
+      "verified": false
+    },
+    {
+      "level": 4,
+      "name": "Ministry of Communications",
+      "nameHe": "משרד התקשורת",
+      "description": "Regulator",
+      "descriptionHe": "הרגולטור",
+      "channels": [
+        {
+          "type": "webform",
+          "value": "https://www.gov.il/he/service/communication-service-complaint",
+          "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+          "verified": true
+        }
+      ],
+      "typicalResponseDays": 30,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": true
+    }
+  ],
+  "slaInfo": [
+    {
+      "scenario": "cancellation",
+      "maxResponseDays": 3,
+      "maxResolutionDays": 6,
+      "sourceUrl": "https://www.kolzchut.org.il/he/ביטול_עסקה",
+      "verified": true
+    },
+    {
+      "scenario": "wrong_charge",
+      "maxResponseDays": 5,
+      "maxResolutionDays": 30,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": false
+    },
+    {
+      "scenario": "unresolved_fault",
+      "maxResponseDays": 2,
+      "maxResolutionDays": 7,
+      "sourceUrl": "https://www.gov.il/he/departments/ministry_of_communication",
+      "verified": false
+    }
+  ],
+  "consumerRights": [],
+  "regulator": {
+    "name": "Ministry of Communications",
+    "nameHe": "משרד התקשורת",
+    "website": "https://www.gov.il/he/departments/ministry_of_communication",
+    "complaintUrl": "https://www.gov.il/he/service/communication-service-complaint"
+  },
+  "keywords": ["hot", "cable", "internet", "tv", "mobile", "hot mobile"],
+  "keywordsHe": ["הוט", "כבלים", "אינטרנט", "טלוויזיה", "הוט מובייל"],
+  "stats": {
+    "totalRequests": 0,
+    "avgResponseDays": 0,
+    "successRate": 0,
+    "escalationRate": 0,
+    "byScenario": {}
+  },
+  "lastUpdated": "2024-01-15"
+}
