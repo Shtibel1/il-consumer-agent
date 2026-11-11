@@ -175,6 +175,11 @@ Every resolved case contributes to:
 - Average response times
 - Winning arguments and approaches
 
+How it stays honest:
+- **Survives reloads** - outcomes persist in `localStorage` (key `il-consumer-agent:learning:v1`) behind a pluggable `LearningStorage` interface, so you can swap in a server-side store later
+- **One vote per case** - each request counts once with its latest outcome, so a case that went `needs_more_info` then `resolved` doesn't inflate the numbers
+- **Validated on load** - corrupt or outdated payloads are filtered by a runtime type guard instead of skewing stats or crashing the app
+
 ## 🤝 Contributing
 
 We welcome contributions! The most impactful way to help is by improving the company knowledge base.
@@ -226,6 +231,7 @@ We welcome contributions! The most impactful way to help is by improving the com
 - [x] Request lifecycle tracking
 - [x] Hebrew RTL UI
 - [x] 11 major companies
+- [x] Persistent, de-duplicated learning loop
 
 ### Phase 2: Real Integration
 - [ ] **Real sending with consent** - Actually send requests via email/fax

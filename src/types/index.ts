@@ -172,6 +172,8 @@ export interface DraftTemplate {
 }
 
 export interface LearningEntry {
+  /** Request this outcome belongs to; one entry per request (latest outcome wins). */
+  requestId?: string;
   companyId: string;
   scenario: ScenarioType;
   outcome: ReplyOutcome;

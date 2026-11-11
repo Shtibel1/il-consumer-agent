@@ -11,12 +11,95 @@ import { getCompanyById, companies } from '../data/companies';
 import { isSlaBreach, getSuggestedEscalation } from './stateMachine';
 import { formatISO, startOfDay, isToday, parseISO } from 'date-fns';
 
-const learningEntries: LearningEntry[] = [];
+/**
+ * Pluggable storage for learning entries. The default adapter persists to
+ * localStorage so the agent keeps what it learned across page reloads, the
+ * same way the request store does.
+ */
+export interface LearningStorage {
+  load(): LearningEntry[];
+  save(entries: LearningEntry[]): void;
+}
+
+export const LEARNING_STORAGE_KEY = 'il-consumer-agent:learning:v1';
+
+const REPLY_OUTCOMES: readonly ReplyOutcome[] = [
+  'resolved', 'partial_resolution', 'rejected',
+  'needs_more_info', 'escalated_by_company', 'pending',
+];
+const SCENARIOS: readonly ScenarioType[] = [
+  'cancellation', 'wrong_charge', 'unresolved_fault', 'other',
+];
+
+/** Runtime guard so a corrupted or outdated localStorage payload can't poison stats. */
+export function isLearningEntry(value: unknown): value is LearningEntry {
+  if (typeof value !== 'object' || value === null) return false;
+  const v = value as Record<string, unknown>;
+  return (
+    (v.requestId === undefined || typeof v.requestId === 'string') &&
+    typeof v.companyId === 'string' &&
+    SCENARIOS.includes(v.scenario as ScenarioType) &&
+    REPLY_OUTCOMES.includes(v.outcome as ReplyOutcome) &&
+    typeof v.responseTimeDays === 'number' && Number.isFinite(v.responseTimeDays) &&
+    typeof v.escalationLevel === 'number' &&
+    typeof v.effectiveChannel === 'string' &&
+    Array.isArray(v.effectiveArguments) &&
+    v.effectiveArguments.every(a => typeof a === 'string') &&
+    typeof v.timestamp === 'string'
+  );
+}
+
+export function createMemoryStorage(initial: LearningEntry[] = []): LearningStorage {
+  let entries = [...initial];
+  return {
+    load: () => [...entries],
+    save: next => { entries = [...next]; },
+  };
+}
+
+export function createLocalStorage(
+  key: string = LEARNING_STORAGE_KEY,
+  store: Pick<Storage, 'getItem' | 'setItem'> | undefined =
+    typeof localStorage !== 'undefined' ? localStorage : undefined,
+): LearningStorage {
+  if (!store) return createMemoryStorage();
+  return {
+    load() {
+      try {
+        const parsed: unknown = JSON.parse(store.getItem(key) ?? '[]');
+        return Array.isArray(parsed) ? parsed.filter(isLearningEntry) : [];
+      } catch {
+        return [];
+      }
+    },
+    save(entries) {
+      try {
+        store.setItem(key, JSON.stringify(entries));
+      } catch {
+        // Quota exceeded or storage disabled: keep learning in memory only.
+      }
+    },
+  };
+}
+
+let storage: LearningStorage = createLocalStorage();
+let learningEntries: LearningEntry[] = storage.load();
+
+/** Swap the storage backend (tests, server-side use). Reloads entries from it. */
+export function configureLearningStorage(next: LearningStorage): void {
+  storage = next;
+  learningEntries = storage.load();
+}
+
+export function getLearningEntries(): readonly LearningEntry[] {
+  return learningEntries;
+}
 
 export function recordOutcome(request: Request, outcome: ReplyOutcome): void {
   const lastReply = request.replies[request.replies.length - 1];
   
   const entry: LearningEntry = {
+    requestId: request.id,
     companyId: request.companyId,
     scenario: request.scenario,
     outcome,
@@ -27,7 +110,14 @@ export function recordOutcome(request: Request, outcome: ReplyOutcome): void {
     timestamp: formatISO(new Date()),
   };
   
-  learningEntries.push(entry);
+  // A request may get several outcomes over its life (e.g. needs_more_info,
+  // then resolved). Count each request once, using its latest outcome, so a
+  // chatty case doesn't skew the company's stats.
+  learningEntries = [
+    ...learningEntries.filter(e => e.requestId !== request.id),
+    entry,
+  ];
+  storage.save(learningEntries);
 }
 
 function extractEffectiveArguments(request: Request): string[] {
@@ -167,6 +257,7 @@ export function getPlaybook(
       successfulEntries.length
     : 7;
   
+  const recommendedArguments = getCommonResolutions(entries);
   const tips: string[] = [];
   const tipsHe: string[] = [];
   
@@ -181,7 +272,9 @@ export function getPlaybook(
   
   return {
     recommendedChannel: bestChannel,
-    recommendedArguments: getCommonResolutions(entries),
+    recommendedArguments: recommendedArguments.length > 0
+      ? recommendedArguments
+      : ['consumer_protection_law'],
     avgResolutionDays: Math.round(avgDays),
     successRate: successfulEntries.length / entries.length,
     tips,
